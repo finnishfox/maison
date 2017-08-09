@@ -1,0 +1,22 @@
+{
+  "name": "maison",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/finnishfox/maison/maison.git"
+  },
+  "author": "finnishfox",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-svgsprite": "^1.0.2",
+    "run-sequence": "^2.1.0"
+  }
+}
