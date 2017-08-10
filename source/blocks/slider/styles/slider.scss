@@ -1,0 +1,116 @@
+@import '../../../variables.scss';
+
+.slider {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &__button--prev {
+    transform: rotate(180deg);
+    width: 40px;
+    height: 40px;
+    margin-top: -3px;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+  }
+
+  &__button--next {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 5;
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    transition: transform 0.5s ease-in-out;
+
+    &--no-delay {
+      transition: transform 0s;
+    }
+  }
+
+  &__slide {
+    width: 100%;
+  }
+
+  &__text {
+    position: absolute;
+    right: 17%;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+  }
+
+  &__title {
+    font-family: $maison-neue-medium;
+    color: black;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    font-family: $maison-neue-medium;
+    color: black;
+    font-size: 24px;
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+
+  &__number {
+    font-family: $maison-neue-medium;
+    position: absolute;
+    z-index: 5;
+    bottom: 40px;
+    right: 0;
+    opacity: 0.7;
+    font-size: 24px;
+  }
+
+}
+
+@media screen and(max-width: 900px) {
+  .slider {
+
+    &__button--prev,
+    &__button--next {
+      display: none;
+    }
+
+    &__number {
+      margin-right: 40px;
+    }
+
+    &__image {
+      object-fit: cover;
+      height: 440px;
+      width: 100vw;
+    }
+
+    &__circles {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 40px;
+    }
+
+    &__circle {
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      border: 3px solid $grey;
+      display: inline-block;
+      margin-right: 10px;
+
+      &--active {
+        background: $grey;
+      }
+    }
+  }
+}

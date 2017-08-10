@@ -1,0 +1,47 @@
+@import '../../../mixins.scss';
+@import '../../../variables.scss';
+
+.header {
+  background: whitesmoke;
+  height: 765px;
+
+  &__navigation {
+    position: absolute;
+    height: 110px;
+    width: 100%;
+    z-index: 10;
+  }
+
+  &__wrapper {
+    @include margin-auto;
+    position: relative;
+    height: 100%;
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 5;
+    top: 40px;
+  }
+}
+
+@media screen and(max-width: 900px) {
+  .header {
+    height: 440px;
+
+    &__navigation {
+      background: white;
+      border-bottom: 1px solid $grey;
+    }
+
+    &__wrapper {
+      position: relative;
+      margin: 0;
+    }
+
+    &__logo {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

@@ -8,5 +8,9 @@ html
         link(rel="stylesheet", href="styles/styles.css")
         link(rel="stylesheet", href="styles/reset.css")
     body
+        svg(style='display:none')
+            include ../svg-sprite/svg.svg
 
-        script(defer src='js/script.js')
+        include ../blocks/header/pug/header.pug
+        script(src='https://hammerjs.github.io/dist/hammer.js')
+        script(src='js/script.js')

@@ -1,0 +1,130 @@
+@import '../../../variables.scss';
+
+.navigation {
+  position: absolute;
+  right: 70px;
+  top: 40px;
+  z-index: 5;
+
+  &__link {
+    font-family: $maison-neue-medium;
+    color: black;
+    opacity: 0.5;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-right: 40px;
+    line-height: 26px;
+    letter-spacing: 0.4em;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__cart {
+    position: absolute;
+    z-index: 5;
+    top: 40px;
+    right: 0;
+  }
+
+  &__cart-number{
+    font-family: $maison-neue-medium;
+    font-size: 18px;
+    color:white;
+    background: black;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: block;
+    text-align: center;
+    line-height: 25px;
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+  }
+
+}
+
+@media screen and(max-width: 900px) {
+  .navigation {
+    visibility: hidden;
+    opacity: 0;
+    background: white;
+    width: 100vw;
+    left: 0;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    transition: all 1s ease-in-out;
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__link {
+      margin-bottom: 40px;
+    }
+
+    &__toggle-button {
+      display: inline-block;
+      width: 35px;
+      height: 25px;
+      position: absolute;
+      z-index: 5;
+      left: 40px;
+      top: 40px;
+    }
+
+    &__hamburger,
+    &__hamburger:before,
+    &__hamburger:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 4px;
+      width: 35px;
+      background-color: black;
+      position: absolute;
+      display: block;
+      content: '';
+    }
+
+    &__hamburger:before {
+      top: -12px;
+    }
+
+    &__hamburger:after {
+      bottom: -12px;
+    }
+
+    &__toggle-button &__hamburger,
+    &__toggle-button &__hamburger:before,
+    &__toggle-button &__hamburger:after {
+      transition: all 1s ease-in-out;
+    }
+
+    &__toggle-button--open &__hamburger {
+      background-color: transparent !important;
+    }
+
+    &__toggle-button--open &__hamburger:before,
+    &__toggle-button--open &__hamburger:after {
+      top: 0;
+    }
+
+    &__toggle-button--open &__hamburger:before {
+      transform: rotate(45deg);
+    }
+
+    &__toggle-button--open &__hamburger:after {
+      transform: rotate(-45deg);
+    }
+
+    &__cart {
+      right: 40px;
+    }
+  }
+}
+
