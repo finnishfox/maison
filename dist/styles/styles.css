@@ -635,8 +635,6 @@
     font-size: 24px; }
 
 @media screen and (max-width: 900px) {
-  .slider__button--prev, .slider__button--next {
-    display: none; }
   .slider__number {
     margin-right: 40px; }
   .slider__image {
@@ -644,7 +642,11 @@
     height: 440px;
     width: 100vw; }
   .slider__text {
-    transform: none; }
+    transform: none; } }
+
+@media screen and (max-width: 500px) {
+  .slider__button--prev, .slider__button--next {
+    display: none; }
   .slider__circles {
     position: absolute;
     left: 50%;

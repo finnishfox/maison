@@ -88,10 +88,6 @@
 
 @media screen and (max-width: 900px) {
   .slider {
-    &__button--prev,
-    &__button--next {
-      display: none;
-    }
 
     &__number {
       margin-right: 40px;
@@ -105,6 +101,16 @@
 
     &__text {
       transform: none;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .slider {
+
+    &__button--prev,
+    &__button--next {
+      display: none;
     }
 
     &__circles {
