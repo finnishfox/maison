@@ -1,0 +1,13 @@
+mixin item(image, image_hover, title, price, isNew)
+    div.item
+        div.item__images
+            img(src=image, alt=title).item__image
+            img(src=image_hover, alt=title).item__image
+        div.item__wrapper
+            if isNew
+                p.item__new='New'
+            h3.item__title=title
+            p.item__price='$'+price
+        div.item__overlay
+            button.item__like-button
+            button.item__add-to-cart-button Add to Cart

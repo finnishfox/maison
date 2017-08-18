@@ -26,12 +26,19 @@
     z-index: 5;
     top: 40px;
     right: 0;
+
+    &:before {
+      font-family: Ionicons;
+      content: "\f110";
+      font-size: 32px;
+      color: black;
+    }
   }
 
-  &__cart-number{
+  &__cart-number {
     font-family: $maison-neue-medium;
     font-size: 18px;
-    color:white;
+    color: white;
     background: black;
     border-radius: 50%;
     width: 25px;
@@ -41,12 +48,11 @@
     line-height: 25px;
     position: absolute;
     right: -10px;
-    bottom: -10px;
+    bottom: -12px;
   }
-
 }
 
-@media screen and(max-width: 900px) {
+@media screen and (max-width: 900px) {
   .navigation {
     visibility: hidden;
     opacity: 0;
@@ -74,7 +80,7 @@
       height: 25px;
       position: absolute;
       z-index: 5;
-      left: 40px;
+      left: $margin-size;
       top: 40px;
     }
 
@@ -123,7 +129,7 @@
     }
 
     &__cart {
-      right: 40px;
+      right: $margin-size;
     }
   }
 }

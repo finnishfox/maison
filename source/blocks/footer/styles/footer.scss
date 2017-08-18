@@ -1,0 +1,39 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+.footer {
+  &__wrapper {
+    @include margin-auto;
+
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    font-family: $maison-neue-medium;
+    font-size: 18px;
+    color: black;
+    opacity: 0.5;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    font-family: $maison-neue-medium;
+    font-size: 18px;
+    color: black;
+    margin-right: 40px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    &__navigation {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+}

@@ -5,6 +5,7 @@ const pug = require('gulp-pug');
 const runSequence = require('run-sequence');
 const sprite = require('gulp-svgsprite');
 const replace = require('gulp-replace');
+const stylefmt = require('gulp-stylefmt');
 
 
 const path = {
@@ -58,7 +59,9 @@ gulp.task('sprite', () => gulp.src(path.static.svg)
   .pipe(gulp.dest(path.source.svgsprite)));
 
 
-
+gulp.task('stylefmt', () => gulp.src(path.source.scss)
+  .pipe(stylefmt())
+  .pipe(gulp.dest(path.source.blocks)));
 
 gulp.task('default', () => {
   runSequence('sass-to-css', 'sprite', 'pug', 'concat-js', 'copy');

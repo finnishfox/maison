@@ -1,0 +1,82 @@
+@import '../../../variables.scss';
+
+.categories {
+  padding-bottom: 40px;
+  width: 270px;
+  grid-area: categories;
+
+  &__toggle-button {
+    display: none;
+  }
+
+  &__title {
+    color: black;
+    font-size: 24px;
+    font-family: $maison-neue-medium;
+    margin-bottom: 40px;
+  }
+
+  &__category {
+    display: block;
+    color: black;
+    font-size: 18px;
+    font-family: $maison-neue-medium;
+    opacity: 0.7;
+    line-height: 48px;
+    letter-spacing: 0.05em;
+  }
+
+  &__count {
+    color: black;
+    font-size: 14px;
+    font-family: $maison-neue-medium;
+    opacity: 0.4;
+    line-height: 26px;
+    vertical-align: super;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .categories {
+    width: auto;
+
+    &__toggle-button {
+      display: inline-block;
+      font-family: $maison-neue-medium;
+      color: black;
+      font-size: 18px;
+
+      &:after {
+        font-family: Ionicons;
+        font-size: 18px;
+        content: "\f104";
+        margin-left: 10px;
+      }
+    }
+
+    &__wrapper {
+      display: none;
+
+      &--open {
+        display: block;
+        border: 1px solid $grey;
+        padding: 30px 20px 20px;
+        width: calc(100vw - 2 * #{$margin-size});
+        position: absolute;
+        left: $margin-size;
+        background: white;
+        z-index: 5;
+        margin-top: 50px;
+      }
+    }
+
+    &__category {
+      text-transform: uppercase;
+      opacity: 1;
+    }
+
+    &__count {
+      display: none;
+    }
+  }
+}

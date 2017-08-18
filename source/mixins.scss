@@ -1,9 +1,11 @@
+@import "variables.scss";
+
 @mixin margin-auto {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
   @media screen and (max-width: 1170px) {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: $margin-size;
+    margin-right: $margin-size;
   }
 }

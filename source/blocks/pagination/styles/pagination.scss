@@ -1,0 +1,53 @@
+@import '../../../variables.scss';
+
+.pagination {
+  margin-top: 60px;
+  float: right;
+
+  &__page {
+    font-family: $maison-neue-medium;
+    font-size: 24px;
+    color: black;
+    opacity: 0.4;
+    letter-spacing: 0.5em;
+    margin-right: 20px;
+    vertical-align: super;
+    cursor: pointer;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__prev-button {
+    margin-right: 20px;
+
+    &:before {
+      font-family: Ionicons;
+      font-size: 42px;
+      content: "\f3d5";
+    }
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__next-button {
+    &:before {
+      font-family: Ionicons;
+      font-size: 42px;
+      content: "\f3d6";
+    }
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pagination {
+    display: none;
+  }
+}

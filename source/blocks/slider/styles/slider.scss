@@ -6,13 +6,18 @@
   overflow: hidden;
 
   &__button--prev {
-    transform: rotate(180deg);
     width: 40px;
     height: 40px;
-    margin-top: -3px;
     position: absolute;
     top: 50%;
     z-index: 5;
+    font-size: 36px;
+
+    &:after {
+      font-family: Ionicons;
+      content: "\f3d2";
+      color: black;
+    }
   }
 
   &__button--next {
@@ -22,6 +27,13 @@
     top: 50%;
     right: 0;
     z-index: 5;
+    font-size: 36px;
+
+    &:after {
+      font-family: Ionicons;
+      content: "\f3d3";
+      color: black;
+    }
   }
 
   &__wrapper {
@@ -72,12 +84,10 @@
     opacity: 0.7;
     font-size: 24px;
   }
-
 }
 
-@media screen and(max-width: 900px) {
+@media screen and (max-width: 900px) {
   .slider {
-
     &__button--prev,
     &__button--next {
       display: none;
@@ -91,6 +101,10 @@
       object-fit: cover;
       height: 440px;
       width: 100vw;
+    }
+
+    &__text {
+      transform: none;
     }
 
     &__circles {

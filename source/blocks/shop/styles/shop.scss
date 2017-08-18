@@ -1,0 +1,28 @@
+@import '../../../mixins.scss';
+
+.shop {
+  @include margin-auto;
+
+  margin-top: 80px;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: 270px auto;
+  grid-template-areas: "categories items" "filter items";
+  grid-template-rows: auto;
+  grid-column-gap: 80px;
+
+  &__filters {
+  }
+
+  &__items {
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .shop {
+    margin-top: 50px;
+    grid-template-areas: "categories filter" "items items";
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+}

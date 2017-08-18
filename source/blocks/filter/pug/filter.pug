@@ -1,0 +1,52 @@
+div.filter
+    button.filter__toggle-button Filter
+    div.filter__wrapper
+        h3.filter__title Filter by
+        section.filter__block
+            h4.filter__name Price
+            div.filter__range
+            input(type='number', placeholder='30', min='0', max='200').filter__value.filter__value--min
+            input(type='number', placeholder='190', min='0', max='200').filter__value.filter__value--max
+            button.filter__button Filter
+        section.filter__block
+            h4.filter__name Color
+            div.filter__colors
+                div.filter__color.filter__color--grey
+                div.filter__color.filter__color--white.filter__color--active
+                div.filter__color.filter__color--pink
+                div.filter__color.filter__color--blue
+                div.filter__color.filter__color--green
+        section.filter__block
+            h4.filter__name Size
+            p.filter__category Small
+                span.filter__count 07
+            p.filter__category.filter__category--selected Medium
+                span.filter__count 12
+            p.filter__category Large
+                span.filter__count 18
+        section.filter__block
+            h4.filter__name Brands
+            p.filter__category Banshu Hamono
+                span.filter__count 02
+            p.filter__category Bower
+                span.filter__count 07
+            p.filter__category Braun
+                span.filter__count 10
+            p.filter__category Elevenplus
+                span.filter__count 09
+            p.filter__category Field
+                span.filter__count 01
+            p.filter__category Henry Wilson
+                span.filter__count 11
+            p.filter__category Menu
+                span.filter__count 17
+        section.filter__block.filter__block--tags
+            h4.filter__name Popular Tags
+            a(href='#').filter__category.filter__category--tag Simple,&nbsp;
+            a(href='#').filter__category.filter__category--tag Minimalism,&nbsp;
+            a(href='#').filter__category.filter__category--tag Furniture,&nbsp;
+            a(href='#').filter__category.filter__category--tag White,&nbsp;
+            a(href='#').filter__category.filter__category--tag Black,&nbsp;
+            a(href='#').filter__category.filter__category--tag Accessories
+
+

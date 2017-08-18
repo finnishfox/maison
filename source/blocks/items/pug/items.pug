@@ -1,0 +1,13 @@
+include ../../item/pug/item.pug
+article.items
+    button.items__sort-button Sort by: A-Z
+    p.items__result-count Showing 1—12 of 24 results
+    div.items__wrapper
+        +item('images/item_1.png', 'images/item_1_hover.png', 'Bottle Humidifier','69.00', true)
+        +item('images/item_2.png', 'images/item_2_hover.png', 'Flower Scissors','159.00')
+        +item('images/item_3.png', 'images/item_3_hover.png', 'Grey Watch','215.00')
+        +item('images/item_4.png', 'images/item_4_hover.png', 'Sweeper and Funnel','59.00')
+        +item('images/item_5.png', 'images/item_5_hover.png', 'White Bulb','1349.00')
+        +item('images/item_6.png', 'images/item_6_hover.png', 'Teapot','55.00')
+    include ../../pagination/pug/pagination.pug
+    button.items__show-more-button Show More
