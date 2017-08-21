@@ -5,14 +5,18 @@ const pug = require('gulp-pug');
 const runSequence = require('run-sequence');
 const sprite = require('gulp-svgsprite');
 const replace = require('gulp-replace');
+
 const stylefmt = require('gulp-stylefmt');
+const uglify = require('gulp-uglify-es').default;
+const cleanCSS = require('gulp-clean-css');
+const imagemin = require('gulp-imagemin');
 
 
 const path = {
   source: {
     blocks: 'source/blocks',
-    scss: 'source/blocks/**/**/*.scss',
-    js: ['source/blocks/**/**/*.js'],
+    scss: ['source/blocks/**/**/*.scss', 'source/fonts.scss'],
+    js: 'source/blocks/**/**/*.js',
     pug: 'source/pages/*.pug',
     svgsprite: 'source/svg-sprite'
   },
@@ -59,13 +63,32 @@ gulp.task('sprite', () => gulp.src(path.static.svg)
   .pipe(gulp.dest(path.source.svgsprite)));
 
 
+gulp.task('minify-js', () => gulp.src(path.dist.js + '/*')
+  .pipe(uglify({mangle: true}))
+  .pipe(gulp.dest(path.dist.js)));
+
 gulp.task('stylefmt', () => gulp.src(path.source.scss)
   .pipe(stylefmt())
   .pipe(gulp.dest(path.source.blocks)));
 
-gulp.task('default', () => {
+gulp.task('minify-css', () => gulp.src(path.dist.styles + '/*')
+  .pipe(cleanCSS())
+  .pipe(gulp.dest(path.dist.styles)));
+
+gulp.task('imagemin', () =>
+  gulp.src(path.static.images)
+    .pipe(imagemin())
+    .pipe(gulp.dest(path.dist.images))
+);
+
+
+gulp.task('dev', () => {
   runSequence('sass-to-css', 'sprite', 'pug', 'concat-js', 'copy');
 });
 
+gulp.task('prod', () => {
+  runSequence('minify-js', 'stylefmt', 'minify-css', 'imagemin');
+});
 
-gulp.watch('./source/**/*.*', ['default']);
+
+gulp.watch(['./source/**/*.*', './static/**/*.*']);

@@ -3,8 +3,7 @@
 .items {
   width: 100%;
   grid-area: items;
-  grid-row-start: 1;
-  grid-row-end: span 2;
+  grid-row: 1 / span 2;
 
   &__sort-button {
     font-family: $maison-neue-medium;

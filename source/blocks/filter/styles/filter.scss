@@ -1,7 +1,6 @@
 @import '../../../variables.scss';
 
 .filter {
-  // border-bottom: 1px solid $grey;
   border-top: 1px solid $grey;
   width: 270px;
   grid-area: filter;
@@ -57,7 +56,7 @@
     margin-bottom: 20px;
   }
 
-  /* overriding noUiSlider styles*/
+  /* overriding noUiSlider styles */
   .noUi-horizontal {
     height: 2px !important;
   }
@@ -91,7 +90,8 @@
       display: none;
     }
   }
-  /* end overriding noUiSlider styles*/
+
+  /* end overriding noUiSlider styles */
 
   &__colors {
     display: grid;

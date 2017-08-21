@@ -10,12 +10,6 @@
   grid-template-areas: "categories items" "filter items";
   grid-template-rows: auto;
   grid-column-gap: 80px;
-
-  &__filters {
-  }
-
-  &__items {
-  }
 }
 
 @media screen and (max-width: 900px) {
